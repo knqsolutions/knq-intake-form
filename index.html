@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KNQ Solutions – Initial Inquiry Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>KNQ Solutions – Initial Client Inquiry Form</h1>
+  <p class="subtitle">Please complete the form below to begin your inquiry.</p>
+  <form id="knqForm">
+    <label>Full Name <input type="text" name="fullName" required /></label>
+    <label>Email Address <input type="email" name="email" required /></label>
+    <label>Phone Number <input type="tel" name="phone" required /></label>
+
+    <label>Preferred Contact Method
+      <select name="contactMethod" required>
+        <option value="">Select...</option>
+        <option>Email</option>
+        <option>Phone</option>
+        <option>Text</option>
+        <option>WhatsApp</option>
+        <option>Messenger</option>
+      </select>
+    </label>
+
+    <label>Are you currently in Canada?
+      <select id="inCanada" name="inCanada" onchange="toggleStatusFields()" required>
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+
+    <div id="statusSection" class="hidden">
+      <label>Current Immigration Status <input type="text" name="status" /></label>
+      <label>Status Expiry Date <input type="date" name="statusExpiry" /></label>
+    </div>
+
+    <label>Country of Residence <input type="text" name="residence" required /></label>
+    <label>Country of Citizenship <input type="text" name="citizenship" required /></label>
+
+    <label>What type of service are you inquiring about?
+      <select name="service" required>
+        <option value="">Select...</option>
+        <option>Visitor Visa / Extension</option>
+        <option>Work Permit / LMIA</option>
+        <option>Study Permit</option>
+        <option>Sponsorship</option>
+        <option>Permanent Residency</option>
+        <option>Humanitarian / Compassionate</option>
+        <option>Restoration of Status</option>
+        <option>Other</option>
+      </select>
+    </label>
+
+    <label>Have you ever applied to come to Canada before?
+      <select id="appliedBefore" name="appliedBefore" onchange="toggleApplicationDetails()" required>
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+
+    <div id="applicationDetails" class="hidden">
+      <label>What type of application did you submit? <input type="text" name="appType" /></label>
+      <label>When did you apply? <input type="text" name="appDate" /></label>
+      <label>What was the result? <input type="text" name="appResult" /></label>
+    </div>
+
+    <label>Have you ever been refused a visa or permit to any country?
+      <select name="refused">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+
+    <label>Do you have any family in Canada?
+      <select name="familyInCanada">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+
+    <label>Briefly describe your situation and immigration goal
+      <textarea name="goal" rows="4" required></textarea>
+    </label>
+
+    <label>Do you have a deadline for this request?
+      <select id="hasDeadline" name="hasDeadline" onchange="toggleDeadline()">
+        <option value="">Select...</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+
+    <div id="deadlineDateField" class="hidden">
+      <label>Deadline Date <input type="date" name="deadlineDate" /></label>
+    </div>
+
+    <label>Upload supporting documents <input type="file" name="documentUpload" multiple /></label>
+
+    <label>
+      <input type="checkbox" required />
+      I consent to be contacted by KNQ Solutions and understand this is for pre-assessment only.
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
